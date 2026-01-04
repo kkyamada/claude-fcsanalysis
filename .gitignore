@@ -1,0 +1,7 @@
+logs/
+.venv
+*.png
+*.jpg
+*.eps
+*.fcs
+*.DS_Store

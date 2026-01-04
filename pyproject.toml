@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "claude-fcsanalysis"
+version = "0.1.0"
+description = ""
+authors = ["kkyamada <kkyamada1111@gmail.com>"]
+readme = "README.md"
+package-mode = false
+packages = []
+
+[tool.poetry.dependencies]
+python = "3.8.18"
+shapely = "^2.0.2"
+lxml = "^4.7.1"
+construct = "^2.10.70"
+seaborn = "^0.13.2"
+fcsparser = "0.2.8"
+scipy = "1.10.1"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

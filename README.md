@@ -145,7 +145,7 @@ output/
 | `--color_live` | Live/dead marker (e.g., `LDAqua-`) | None |
 | `--color_marker` | Marker for pre-gating (e.g., `mCherry+`) | None |
 | `--color_quant` | Markers for quantification | Required |
-| `--marker_thresh` | Threshold ratio for marker gate detection | `0.995` |
+| `--marker_thresh` | Threshold ratio for marker gate detection | `0.95` |
 | `--color_thresh` | Threshold ratio for quantification gate detection | `0.98` |
 | `--verbose` | Enable diagnostic output | False |
 

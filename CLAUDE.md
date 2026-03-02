@@ -112,7 +112,7 @@ Key functions in `fcs_utils/visualization.py`:
 
 2. **Secondary gates** (configurable):
    - Live/Dead (optional): Based on viability dye
-   - Marker gates: For population identification (threshold controlled by `--marker_thresh`, default: 0.995)
+   - Marker gates: For population identification (threshold controlled by `--marker_thresh`, default: 0.95)
    - Quantification gates: Rectangle or Quadrant gates for final quantification (threshold controlled by `--color_thresh`, default: 0.98)
 
 ## Claude Configuration

@@ -242,8 +242,8 @@ if __name__ == "__main__":
     parser.add_argument("--marker_mode", type=str, required=False, default="single",
                         help="Mode key for marker direction. Either sinlge or single_reverse is accepted."
     )
-    parser.add_argument("--marker_thresh", type=float, required=False, default=0.995,
-                        help="Threshold ratio for marker gate detection (default: 0.995). Used with --color_marker to define population boundaries."
+    parser.add_argument("--marker_thresh", type=float, required=False, default=0.95,
+                        help="Threshold ratio for marker gate detection (default: 0.95). Used with --color_marker to define population boundaries."
     )
     parser.add_argument("--color_quant", type=str, required=True,
                         help="Keys of fluorescent channels used for quantification. Up to three markers can be used with a slash separation (example: mCherry+/APC-)."

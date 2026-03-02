@@ -36,16 +36,16 @@ For example files, use `source run_all.sh`.
 
 ```bash
 python .claude/skills/fcsprocess/scripts/fcs_main.py \
-    --input_dir path/to/fcs_files/ \
+    --experiment_dir path/to/experiment/ \
     --input_gml gating_strategies/default_gates_CytoFlex_HEK293T.gml \
     --color_quant "mCherry+"
 ```
 
 This will:
-- Load all `.fcs` files from the input directory
-- Apply the gating strategy (TimeQC → Viable → Singlets)
+- Find all subdirectories under `experiment_dir/data/` containing `.fcs` files
+- Apply the gating strategy (TimeQC → Viable → Singlets) to each directory
 - Set a threshold for mCherry+ cells based on control samples
-- Output results to `path/to/output/`
+- Output results to `experiment_dir/output/<data_dir_name>/`
 
 ### Common Examples
 
@@ -54,7 +54,7 @@ Quantify mCherry-positive cells in HEK293T samples:
 
 ```bash
 python .claude/skills/fcsprocess/scripts/fcs_main.py \
-    --input_dir examples/260106_HEK293T_mCherry/data/260106_HEK293T_mCherry_day3_rep1 \
+    --experiment_dir examples/260106_HEK293T_mCherry \
     --input_gml gating_strategies/default_gates_CytoFlex_HEK293T.gml \
     --flowcytometer CytoFlex \
     --ctrl_key "Mock" \
@@ -66,7 +66,7 @@ Quantify both GFP and mCherry populations:
 
 ```bash
 python .claude/skills/fcsprocess/scripts/fcs_main.py \
-    --input_dir path/to/fcs_files/ \
+    --experiment_dir path/to/experiment/ \
     --input_gml gating_strategies/default_gates_CytoFlex_HEK293T.gml \
     --color_quant "GFP+/mCherry+"
 ```
@@ -76,7 +76,7 @@ Include a viability gate before quantification:
 
 ```bash
 python .claude/skills/fcsprocess/scripts/fcs_main.py \
-    --input_dir path/to/fcs_files/ \
+    --experiment_dir path/to/experiment/ \
     --input_gml gating_strategies/default_gates_CytoFlex_HEK293T.gml \
     --color_live "LDAqua-" \
     --color_quant "mCherry+"
@@ -87,7 +87,7 @@ Gate on a marker population before quantification:
 
 ```bash
 python .claude/skills/fcsprocess/scripts/fcs_main.py \
-    --input_dir path/to/fcs_files/ \
+    --experiment_dir path/to/experiment/ \
     --input_gml gating_strategies/default_gates_CytoFlex_HEK293T.gml \
     --color_marker "mCherry+" \
     --color_quant "GFP+"
@@ -138,15 +138,15 @@ output/
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--input_dir` | Directory containing FCS files | Required |
+| `--experiment_dir` | Experiment directory (processes all dirs under `data/`) | Required |
 | `--input_gml` | Path to gating strategy GML file | Required |
-| `--output_dir` | Output directory | `../output/<input_dir_name>` |
 | `--flowcytometer` | Flowcytometer type (`CytoFlex` or `ZE5`) | `CytoFlex` |
 | `--ctrl_key` | Keyword to identify control samples | `Mock` |
 | `--color_live` | Live/dead marker (e.g., `LDAqua-`) | None |
 | `--color_marker` | Marker for pre-gating (e.g., `mCherry+`) | None |
 | `--color_quant` | Markers for quantification | Required |
-| `--thresh_ratio` | Percentile for threshold (0-1) | `0.98` |
+| `--marker_thresh` | Threshold ratio for marker gate detection | `0.995` |
+| `--color_thresh` | Threshold ratio for quantification gate detection | `0.98` |
 | `--verbose` | Enable diagnostic output | False |
 
 ### Marker Syntax
@@ -176,7 +176,7 @@ For a new cell type or flowcytometer, first visit `notebooks/gate_initialization
 ### Poor gating results
 1. Run with `--verbose` to generate diagnostic plots
 2. Check that `--ctrl_key` matches your control sample naming
-3. Adjust `--thresh_ratio` for quantification (lower = more stringent threshold)
+3. Adjust `--color_thresh` for quantification or `--marker_thresh` for marker gates (lower = more stringent threshold)
 
 ### Channel not found
 Ensure your fluorophore is defined in `color_info.csv` with the correct channel name for your flowcytometer.

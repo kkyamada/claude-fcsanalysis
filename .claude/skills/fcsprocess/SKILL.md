@@ -15,18 +15,18 @@ poetry run python path/to/this/repository/.claude/skills/fcsprocess/scripts/fcs_
 Use the required arguments as follows.
 
 ## Required arguments
-- `--input_dir`: Path to the input directory containing .fcs files (and optionally a .csv compensation file, but compensation is not implemented yet.)
+- `--experiment_dir`: Path to the experiment directory. The script will automatically find and process all directories under `experiment_dir/data/`.
 - `--input_gml`: Path to the default gating strategy for the cell type and flowcytometer used. Default gates can be manually generated using `claude-fcsanalysis/notebooks/gate_initialization.ipynb` and saved under `claude-fcsanalysis/gating_strategies`.
 - `--color_quant`: String to indicate fluorophores and +/- symbols to indicate thresholding directions to define cell populations to be quantified. e.g. mCherry+/APC-
 
 ## Optional arguments
-- `--output_dir`: Path to the output directory where results will be saved. Used when this need to be manually specified.
 - `--color_csv`: Path to the .csv file containing the information of fluorophores and channels for flowcytometers. By default, it should use `claude-fcsanalysis/color_info.csv`
 - `--flowcytometer`: String to specify the type of flowcytometer used to collect data in .fcs file.
 - `--ctrl_key`: String to indicate control samples. These should appear in at least one of the input .fcs filenames. Set to Mock by default.
 - `--color_live`: String to indicate fluorophores and +/- symbol to indicate thresholding direction to define stained live/dead cell populations. e.g. LDAqua-
 - `--color_marker`: String to indicate marker fluorophores and +/- symbol to indicate thresholding direction to define cell populations of interest. Up to two keys can be combined with a slash symbol. e.g. mCherry+/GFP-
-- `--thresh_ratio`: Ratio to determine the final quantification threshold when using the control samples. This could be experiment/cell type specific.
+- `--marker_thresh`: Threshold ratio for marker gate detection (default: 0.995). Used with `--color_marker` to define population boundaries.
+- `--color_thresh`: Threshold ratio for quantification gate detection (default: 0.98). Used with `--color_quant` to define quantification boundaries.
 - `--marker_mode`: Mode to define if the control sample defined with `--crtl_key` contains the expected marker color. Set as either single (default) or single_reverse. The single mode expects the control sample has the expected marker color, and the single_reverse mode expects the control sample has no marker color.
 - `--marker_n_components`: Number of mixture model components to define marker threshold value (default: 2). 2 for bimodal and 1 for unimodal marker distribution in the control samples.
 - `--vis_mode`: Mode for visualization only relevant if `--color_quant` has one color for quantification. Set as either default (default) or last. The default mode visualize quantification channel vs SSC-A, and the last mode visualize quantification channel vs last used channel during gating.

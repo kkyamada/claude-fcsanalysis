@@ -106,11 +106,11 @@ def process_single_dir(args, input_dir, output_dir):
             fluor_keys = args.color_marker,
             parent_gate = last_gate,
             sample_id_list = ctrl_id_list,
-            thresh_ratio = args.thresh_ratio,
+            thresh_ratio = args.marker_thresh,
             marker_mode = args.marker_mode,
             marker_n_components = args.marker_n_components
         )
-    
+
     # Set up gates for quantification (either rectangle or quandrant).
     logger.info(f"Setting up quantification gates {args.color_quant} using control samples...")
     last_gate = secondary_gates.setup_quant_gates(
@@ -120,7 +120,7 @@ def process_single_dir(args, input_dir, output_dir):
         parent_gate = last_gate,
         gate_for_thresh = gate_thresh,
         sample_id_list = ctrl_id_list,
-        thresh_ratio = args.thresh_ratio,
+        thresh_ratio = args.color_thresh,
         verbose = args.verbose,
         fig_dir = fig_path,
     )
@@ -242,11 +242,14 @@ if __name__ == "__main__":
     parser.add_argument("--marker_mode", type=str, required=False, default="single",
                         help="Mode key for marker direction. Either sinlge or single_reverse is accepted."
     )
+    parser.add_argument("--marker_thresh", type=float, required=False, default=0.995,
+                        help="Threshold ratio for marker gate detection (default: 0.995). Used with --color_marker to define population boundaries."
+    )
     parser.add_argument("--color_quant", type=str, required=True,
                         help="Keys of fluorescent channels used for quantification. Up to three markers can be used with a slash separation (example: mCherry+/APC-)."
     )
-    parser.add_argument("--thresh_ratio", type=float, required=False, default=0.98,
-                        help="Ratio to define the threshold for the target population."
+    parser.add_argument("--color_thresh", type=float, required=False, default=0.98,
+                        help="Threshold ratio for quantification gate detection (default: 0.98). Used with --color_quant to define quantification boundaries."
     )
     parser.add_argument("--vis_mode", type=str, required=False, default="default",
                         help="Mode key to define visualization for the quantified population. Only relevant for single-color quantification. default: Quant vs SSC-A. last: Quant vs last x-axis.")

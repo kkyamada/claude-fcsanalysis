@@ -27,21 +27,23 @@ FONTSIZE_TITLE = 15
 FIG_DPI = 300
 
 
-def sigmoid(x, L, k, x0, b):
+def sigmoid(x, y_min, y_max, k, x0):
     """
     Sigmoid function for EC50-like curve fitting.
 
+    Output is constrained to [y_min, y_max] by parameterization.
+
     Args:
         x: Input values
-        L: Maximum value (top plateau)
-        k: Steepness of the curve
+        y_min: Minimum value (bottom plateau)
+        y_max: Maximum value (top plateau)
+        k: Steepness of the curve (positive = increasing, negative = decreasing)
         x0: x value at the midpoint (EC50)
-        b: Minimum value (bottom plateau)
 
     Returns:
-        Sigmoid values
+        Sigmoid values in range [y_min, y_max]
     """
-    return L / (1 + np.exp(-k * (x - x0))) + b
+    return y_min + (y_max - y_min) / (1 + np.exp(-k * (x - x0)))
 
 
 def fit_sigmoid_and_get_ec50(x_data, y_data, target_ratio=0.5):
@@ -56,18 +58,18 @@ def fit_sigmoid_and_get_ec50(x_data, y_data, target_ratio=0.5):
     Returns:
         fitted_y: Fitted y values
         ec50: x value where y = target_ratio
-        popt: Optimal parameters (L, k, x0, b)
+        popt: Optimal parameters (y_min, y_max, k, x0)
     """
     # Initial parameter guesses
-    L_init = np.max(y_data) - np.min(y_data)
-    b_init = np.min(y_data)
+    y_min_init = np.min(y_data)
+    y_max_init = np.max(y_data)
     x0_init = np.median(x_data)
     k_init = 1.0 if y_data.iloc[-1] > y_data.iloc[0] else -1.0  # Determine direction
 
-    # Bounds for parameters
+    # Bounds for parameters: y_min and y_max constrained to [0, 1]
     bounds = (
-        [0, -10, np.min(x_data), 0],      # Lower bounds
-        [1.5, 10, np.max(x_data), 1]       # Upper bounds
+        [0.0, 0.0, -10, np.min(x_data)],   # Lower bounds: y_min, y_max, k, x0
+        [1.0, 1.0, 10, np.max(x_data)]      # Upper bounds: y_min, y_max, k, x0
     )
 
     try:
@@ -75,21 +77,21 @@ def fit_sigmoid_and_get_ec50(x_data, y_data, target_ratio=0.5):
             sigmoid,
             x_data,
             y_data,
-            p0=[L_init, k_init, x0_init, b_init],
+            p0=[y_min_init, y_max_init, k_init, x0_init],
             bounds=bounds,
             maxfev=5000
         )
         fitted_y = sigmoid(x_data, *popt)
 
         # Calculate EC50 (x value where y = target_ratio)
-        L, k, x0, b = popt
-        # Solve: target_ratio = L / (1 + exp(-k * (x - x0))) + b
-        # target_ratio - b = L / (1 + exp(-k * (x - x0)))
-        # (target_ratio - b) / L = 1 / (1 + exp(-k * (x - x0)))
-        # L / (target_ratio - b) = 1 + exp(-k * (x - x0))
-        # L / (target_ratio - b) - 1 = exp(-k * (x - x0))
-        if (target_ratio - b) > 0 and (target_ratio - b) < L:
-            ec50 = x0 - np.log(L / (target_ratio - b) - 1) / k
+        y_min, y_max, k, x0 = popt
+        # Solve: target_ratio = y_min + (y_max - y_min) / (1 + exp(-k * (x - x0)))
+        # (target_ratio - y_min) / (y_max - y_min) = 1 / (1 + exp(-k * (x - x0)))
+        # (y_max - y_min) / (target_ratio - y_min) = 1 + exp(-k * (x - x0))
+        # (y_max - y_min) / (target_ratio - y_min) - 1 = exp(-k * (x - x0))
+        L = y_max - y_min
+        if (target_ratio - y_min) > 0 and (target_ratio - y_min) < L:
+            ec50 = x0 - np.log(L / (target_ratio - y_min) - 1) / k
         else:
             ec50 = np.nan
 

@@ -20,6 +20,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+import warnings
+warnings.filterwarnings('ignore')
+
 def main(args):
     """Main entry point for quant_fluor50 analysis."""
     # Path settings

@@ -1,0 +1,10 @@
+{
+  "input_dir": "examples/260105_HEK293T_GFPDisruption",
+  "output_dir": "examples/260105_HEK293T_GFPDisruption/output_fluor50",
+  "color_csv": "color_info.csv",
+  "flowcytometer": "CytoFlex",
+  "color_marker": "mCherry-A",
+  "color_50": "GFP-A",
+  "window_size": 100,
+  "verbose": false
+}

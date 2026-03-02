@@ -26,7 +26,7 @@ def init_session(
     Args:
         input_dir: A path to the directory containing .fcs files to analyze.
         input_gml: A path to the gml file containing a gating strategy to start with (default: None).
-        max_val: Max possible values within the fcs file. 262144 for regular 18-bit flowcytometer detectors.
+        max_val: Max possible values within the fcs file. 262144 (2**18-1) for regular 18-bit flowcytometer detectors.
 
     Returns:
         session: Loaded and initialized session.

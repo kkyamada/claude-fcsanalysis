@@ -1,6 +1,7 @@
 # FCS Analysis Pipeline
 
 A semi-automated flow cytometry analysis pipeline for processing FCS files with hierarchical gating strategies. Built on [FlowKit](https://github.com/whitews/FlowKit).
+This project is designed to be Claude Code-friendly, with a main funtion file implemented as a SKILL.
 
 ## What It Does
 
@@ -9,13 +10,16 @@ This tool helps you:
 1. **Automatically identify cells** - Filters debris and identifies viable single cells using FSC/SSC gating
 2. **Set fluorescence thresholds** - Uses Gaussian Mixture Models to find optimal thresholds based on control samples
 3. **Quantify populations** - Calculates percentages of positive/negative populations for your markers of interest
-4. **Generate figures** - Creates publication-ready scatter plots showing your gating strategy
+4. **Generate figures** - Creates scatter plots showing your gating strategy with % cells gated.
 
 ## Installation
+Prerequisites:
+- Python >= 3.12
+- Poetry installed
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/claude-fcsanalysis.git
+git clone https://github.com/kkyamada/claude-fcsanalysis.git
 cd claude-fcsanalysis
 
 # Install with Poetry
@@ -24,7 +28,11 @@ poetry install
 
 ## Quick Start
 
+### Clade-based Usage
+Allow Claude for access and simply ask Claude for running examples.
+
 ### Basic Usage
+For example files, use `source run_all.sh`.
 
 ```bash
 python .claude/skills/fcsprocess/scripts/fcs_main.py \

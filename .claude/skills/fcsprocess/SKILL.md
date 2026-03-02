@@ -10,7 +10,7 @@ This skill processes flow cytometry analysis data to quantify the mCherry OFF po
 To process FCS files, run the processing script with an input directory containing .fcs files and an output directory:
 
 ```bash
-poetry run python /Users/keisuke/claude_codes/claude-fcsanalysis/.claude/skills/fcsprocess/scripts/fcs_main.py
+poetry run python path/to/this/repository/.claude/skills/fcsprocess/scripts/fcs_main.py
 ```
 Use the required arguments as follows.
 

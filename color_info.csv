@@ -1,4 +1,5 @@
-Fluorophore,Hex,CytoFlex,ZE5
+Info,Hex,CytoFlex,ZE5
+max_bit,None,18bit,24bit
 FSC,None,FSC-A,FSC 488/10-A
 SSC,None,SSC-A,SSC 488/10-A
 LDAqua,#98FB98,None,LIVE-DEAD Fixable Aqua-A

@@ -49,15 +49,13 @@ def main(args):
     logging.getLogger().addHandler(file_handler)
 
     # Initialize settings
-    max_dict = {
-        "CytoFlex":2**18-1, # 18bit
-        "ZE5":2**24-1, # 24bit
-    }
     df_color = pd.read_csv(args.color_csv)
-    dict_color = df_color.set_index("Fluorophore")[args.flowcytometer].to_dict()
+    dict_color = df_color.set_index("Info")[args.flowcytometer].to_dict()
+    max_bit = dict_color["max_bit"].strip("bit")
+    max_val = 2**int(max_bit)-1
     mypalette = process_id.setup_fcsprocess(args.input_dir, dict_color)
     logger.info(f"Initializing the gating strategy with {args.input_gml}")
-    session = primary_gates.init_session(args.input_dir, args.input_gml, max_val=max_dict[args.flowcytometer])
+    session = primary_gates.init_session(args.input_dir, args.input_gml, max_val=max_val)
     
     # Set up primary gates (TimeQC -> Viable -> Singlets)
     logger.info(f"Optimizing the time gate based on event rates within each sample...")
@@ -142,7 +140,7 @@ def main(args):
         session,
         fig_dir = Path(args.output_dir) / Path("figures"),
         output_dir = args.output_dir,
-        max_val = max_dict[args.flowcytometer],
+        max_val = max_val,
         savefig = True,
         verbose = args.verbose,
         vis_mode = args.vis_mode

@@ -1,9 +1,9 @@
 logs/
 .venv
-*.png
+# *.png
 *.jpg
 *.eps
-*.fcs
+# *.fcs
 *.DS_Store
 *.pyc
 notebooks/test.ipynb

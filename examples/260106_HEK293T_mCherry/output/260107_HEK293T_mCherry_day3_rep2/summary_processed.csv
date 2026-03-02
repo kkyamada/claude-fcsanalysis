@@ -1,0 +1,25 @@
+sample_id,gate_path,gate_name,gate_type,quadrant_parent,parent,count,absolute_percent,relative_percent,level
+HEK293TChe_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,866,8.81514657980456,8.81514657980456,1
+HEK293TChe_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,719,7.3188110749185675,83.02540415704388,2
+HEK293TChe_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,687,6.993078175895766,95.54937413073714,3
+HEK293TChe_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,0,0.0,0.0,4
+HEK293TChe_ProteinA_100nM.fcs,"('root',)",TimeQC,RectangleGate,,root,530,6.364837276330011,6.364837276330011,1
+HEK293TChe_ProteinA_100nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,454,5.45214362915816,85.66037735849056,2
+HEK293TChe_ProteinA_100nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,402,4.827669028461631,88.54625550660793,3
+HEK293TChe_ProteinA_100nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,21,0.25219166566590606,5.223880597014925,4
+HEK293TChe_ProteinA_400nM.fcs,"('root',)",TimeQC,RectangleGate,,root,7919,99.98737373737374,99.98737373737374,1
+HEK293TChe_ProteinA_400nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,5796,73.18181818181819,73.19105947720672,2
+HEK293TChe_ProteinA_400nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,5106,64.46969696969697,88.09523809523809,3
+HEK293TChe_ProteinA_400nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,1353,17.083333333333332,26.498237367802584,4
+HEK293TControl_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,2195,28.771791846899987,28.771791846899987,1
+HEK293TControl_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,1877,24.603486695504,85.5125284738041,2
+HEK293TControl_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,1809,23.712151002752655,96.37719765583378,3
+HEK293TControl_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,13,0.17040241184952154,0.7186290768380321,4
+HEK293TControl_ProteinA_100nM.fcs,"('root',)",TimeQC,RectangleGate,,root,2662,33.64934900771078,33.64934900771078,1
+HEK293TControl_ProteinA_100nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,2181,27.569207432688664,81.93087903831704,2
+HEK293TControl_ProteinA_100nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2073,26.20401971937808,95.04814305364512,3
+HEK293TControl_ProteinA_100nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,8,0.10112501580078373,0.3859141341051616,4
+HEK293TControl_ProteinA_400nM.fcs,"('root',)",TimeQC,RectangleGate,,root,5779,65.10082234989298,65.10082234989298,1
+HEK293TControl_ProteinA_400nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,4091,46.085389208065784,70.79079425506143,2
+HEK293TControl_ProteinA_400nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3910,44.04641207615185,95.57565387435835,3
+HEK293TControl_ProteinA_400nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,21,0.23656640757012504,0.5370843989769821,4

@@ -1,0 +1,46 @@
+2026-03-01 20:11:56,032 [INFO] fcs_utils.process_id: Processing .fcs files in examples/260104_MOLM13_LentiMarkerDisruption/data/260105_MOLM13_LentiMarkerDisruption_day7_rep2
+2026-03-01 20:11:56,110 [INFO] fcs_utils.process_id: Finished setting up.
+2026-03-01 20:11:56,110 [INFO] __main__: Initializing the gating strategy with gating_strategies/default_gates_ZE5_MOLM13.gml
+2026-03-01 20:11:56,200 [INFO] __main__: Optimizing the time gate based on event rates within each sample...
+2026-03-01 20:11:56,203 [INFO] __main__: Optimizing the singlet identification using all samples...
+2026-03-01 20:12:02,570 [INFO] __main__: Optimizing the stained live/dead gate using all samples...
+2026-03-01 20:12:02,612 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate Live.
+2026-03-01 20:12:03,002 [INFO] fcs_utils.secondary_gates: Number of mixture components: 2
+2026-03-01 20:12:03,008 [INFO] fcs_utils.secondary_gates: Expected counts: [ 1578.57548991 35839.42451009]
+2026-03-01 20:12:03,009 [INFO] fcs_utils.secondary_gates: Means:
+[[0.74715218]
+ [0.68243725]]
+2026-03-01 20:12:03,009 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.02676311]]
+
+ [[0.00106236]]]
+2026-03-01 20:12:03,009 [INFO] fcs_utils.secondary_gates: Selected component: 1
+2026-03-01 20:12:03,010 [INFO] __main__: Detected control samples: ['MOLM13Control_Mock_mChBla.fcs', 'MOLM13Target_Mock_mChBla.fcs']
+2026-03-01 20:12:03,010 [INFO] __main__: Setting up marker gates mCherry+ using all samples...
+2026-03-01 20:12:03,023 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate mCherry+.
+2026-03-01 20:12:03,091 [INFO] fcs_utils.secondary_gates: Number of mixture components: 2
+2026-03-01 20:12:03,093 [INFO] fcs_utils.secondary_gates: Expected counts: [14762.97348926  2584.02651074]
+2026-03-01 20:12:03,093 [INFO] fcs_utils.secondary_gates: Means:
+[[1.19762822]
+ [0.73745189]]
+2026-03-01 20:12:03,093 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.00354953]]
+
+ [[0.01407254]]]
+2026-03-01 20:12:03,093 [INFO] fcs_utils.secondary_gates: Selected component: 0
+2026-03-01 20:12:03,093 [INFO] __main__: Setting up quantification gates APC- using control samples...
+2026-03-01 20:12:03,114 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate APC-.
+2026-03-01 20:12:03,119 [INFO] fcs_utils.secondary_gates: Number of mixture components: 1
+2026-03-01 20:12:03,120 [INFO] fcs_utils.secondary_gates: Expected counts: [17347.]
+2026-03-01 20:12:03,121 [INFO] fcs_utils.secondary_gates: Means:
+[[1.1914898]]
+2026-03-01 20:12:03,121 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.0076737]]]
+2026-03-01 20:12:03,121 [INFO] fcs_utils.secondary_gates: Selected component: 0
+2026-03-01 20:12:03,131 [INFO] __main__: Finished setting up gates. Gating strategy is saved to examples/260104_MOLM13_LentiMarkerDisruption/output/260105_MOLM13_LentiMarkerDisruption_day7_rep2/gating_strategy.gml.
+2026-03-01 20:12:03,131 [INFO] __main__: Processing samples and visualizing results...
+2026-03-01 20:12:06,700 [INFO] fcs_utils.visualization: Finished processing samples.
+2026-03-01 20:12:06,700 [INFO] fcs_utils.visualization: Figures are saved to examples/260104_MOLM13_LentiMarkerDisruption/output/260105_MOLM13_LentiMarkerDisruption_day7_rep2/figures.
+2026-03-01 20:12:06,700 [INFO] fcs_utils.visualization: Output is saved to examples/260104_MOLM13_LentiMarkerDisruption/output/260105_MOLM13_LentiMarkerDisruption_day7_rep2/summary_processed.csv.
+2026-03-01 20:12:06,701 [INFO] __main__: Arguments saved to examples/260104_MOLM13_LentiMarkerDisruption/output/260105_MOLM13_LentiMarkerDisruption_day7_rep2/args_20260301_201156.json
+2026-03-01 20:12:06,701 [INFO] __main__: Logs saved to examples/260104_MOLM13_LentiMarkerDisruption/output/260105_MOLM13_LentiMarkerDisruption_day7_rep2/fcsprocess_20260301_201156.log

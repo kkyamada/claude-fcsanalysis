@@ -1,0 +1,17 @@
+{
+  "input_dir": "examples/260103_MOLM13_MarkerDisruption/data/260104_MOLM13_MarkerDisruption_day7_rep2",
+  "output_dir": "examples/260103_MOLM13_MarkerDisruption/output/260104_MOLM13_MarkerDisruption_day7_rep2",
+  "input_gml": "gating_strategies/default_gates_ZE5_MOLM13.gml",
+  "color_csv": "color_info.csv",
+  "flowcytometer": "ZE5",
+  "turnoff_timeqc": false,
+  "verbose": false,
+  "ctrl_key": "Mock",
+  "color_live": "LDAqua-",
+  "color_marker": null,
+  "marker_n_components": 2,
+  "marker_mode": "single",
+  "color_quant": "APC-",
+  "thresh_ratio": 0.95,
+  "vis_mode": "default"
+}

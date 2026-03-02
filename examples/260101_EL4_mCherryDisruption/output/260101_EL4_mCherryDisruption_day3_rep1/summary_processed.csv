@@ -1,0 +1,17 @@
+sample_id,gate_path,gate_name,gate_type,quadrant_parent,parent,count,absolute_percent,relative_percent,level
+EL4Che_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,4020,50.38225341521494,50.38225341521494,1
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3352,42.0102769770648,83.38308457711443,2
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3133,39.265572126832936,93.46658711217184,3
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,44,0.551447549818273,1.4044047239067987,4
+EL4Che_ProteinC_400nM.fcs,"('root',)",TimeQC,RectangleGate,,root,5597,69.2526602326157,69.2526602326157,1
+EL4Che_ProteinC_400nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,4271,52.84583024003959,76.30873682329819,2
+EL4Che_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3863,47.79757485770848,90.44720206040739,3
+EL4Che_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,727,8.995298193516456,18.819570282164122,4
+EL4Control_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,3227,41.02466310704297,41.02466310704297,1
+EL4Control_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,2602,33.0790744978388,80.63216609854354,2
+EL4Control_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2425,30.82888380371218,93.19754035357417,3
+EL4Control_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,49,0.622934146961607,2.020618556701031,4
+EL4Control_ProteinC_400nM.fcs,"('root',)",TimeQC,RectangleGate,,root,3605,45.98800867457584,45.98800867457584,1
+EL4Control_ProteinC_400nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,2989,38.12986350299783,82.91262135922331,2
+EL4Control_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2747,35.04273504273504,91.90364670458348,3
+EL4Control_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,56,0.7143768337798189,2.038587550054605,4

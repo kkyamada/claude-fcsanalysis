@@ -1,0 +1,16 @@
+sample_id,gate_path,gate_name,gate_type,quadrant_parent,parent,count,absolute_percent,relative_percent,level
+HEK293T_Mock_0ng.fcs,"('root',)",TimeQC,RectangleGate,,root,7696,100.0,100.0,1
+HEK293T_Mock_0ng.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,5484,71.25779625779626,71.25779625779626,2
+HEK293T_Mock_0ng.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,4896,63.61746361746362,89.27789934354486,3
+HEK293T_Mock_0ng.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,1,0.012993762993762994,0.02042483660130719,4
+HEK293T_Mock_0ng.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'mCherry+')",GFP-,RectangleGate,,mCherry+,0,0.0,0.0,5
+HEK293T_Mutant_500ng.fcs,"('root',)",TimeQC,RectangleGate,,root,11723,75.41816778178075,75.41816778178075,1
+HEK293T_Mutant_500ng.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,6299,40.52367472979928,53.731979868634305,2
+HEK293T_Mutant_500ng.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,5136,33.0416881111683,81.53675186537545,3
+HEK293T_Mutant_500ng.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,4064,26.145136387030366,79.12772585669782,4
+HEK293T_Mutant_500ng.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'mCherry+')",GFP-,RectangleGate,,mCherry+,420,2.7020072053525475,10.334645669291339,5
+HEK293T_WT_500ng.fcs,"('root',)",TimeQC,RectangleGate,,root,12871,87.49235266127387,87.49235266127387,1
+HEK293T_WT_500ng.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,7381,50.17333967779213,57.345971563981045,2
+HEK293T_WT_500ng.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,6327,43.00863299571749,85.72009212843788,3
+HEK293T_WT_500ng.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry+,RectangleGate,,Singlets,4658,31.663381143362113,73.6209894104631,4
+HEK293T_WT_500ng.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'mCherry+')",GFP-,RectangleGate,,mCherry+,3599,24.464686289171368,77.26492056676685,5

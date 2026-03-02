@@ -1,0 +1,22 @@
+2026-03-01 20:12:40,414 [INFO] fcs_utils.process_id: Processing .fcs files in examples/260106_HEK293T_mCherry/data/260106_HEK293T_mCherry_day3_rep1
+2026-03-01 20:12:40,470 [INFO] fcs_utils.process_id: Finished setting up.
+2026-03-01 20:12:40,470 [INFO] __main__: Initializing the gating strategy with gating_strategies/default_gates_CytoFlex_HEK293T.gml
+2026-03-01 20:12:40,572 [INFO] __main__: Optimizing the time gate based on event rates within each sample...
+2026-03-01 20:12:40,577 [INFO] __main__: Optimizing the singlet identification using all samples...
+2026-03-01 20:12:44,296 [INFO] __main__: Detected control samples: ['HEK293TChe_Mock_0nM.fcs', 'HEK293TControl_Mock_0nM.fcs']
+2026-03-01 20:12:44,296 [INFO] __main__: Setting up quantification gates mCherry+ using control samples...
+2026-03-01 20:12:44,301 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate mCherry+.
+2026-03-01 20:12:44,368 [INFO] fcs_utils.secondary_gates: Number of mixture components: 1
+2026-03-01 20:12:44,369 [INFO] fcs_utils.secondary_gates: Expected counts: [6250.]
+2026-03-01 20:12:44,369 [INFO] fcs_utils.secondary_gates: Means:
+[[0.49845503]]
+2026-03-01 20:12:44,369 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.00191505]]]
+2026-03-01 20:12:44,369 [INFO] fcs_utils.secondary_gates: Selected component: 0
+2026-03-01 20:12:44,375 [INFO] __main__: Finished setting up gates. Gating strategy is saved to examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1/gating_strategy.gml.
+2026-03-01 20:12:44,375 [INFO] __main__: Processing samples and visualizing results...
+2026-03-01 20:12:46,968 [INFO] fcs_utils.visualization: Finished processing samples.
+2026-03-01 20:12:46,968 [INFO] fcs_utils.visualization: Figures are saved to examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1/figures.
+2026-03-01 20:12:46,968 [INFO] fcs_utils.visualization: Output is saved to examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1/summary_processed.csv.
+2026-03-01 20:12:46,970 [INFO] __main__: Arguments saved to examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1/args_20260301_201240.json
+2026-03-01 20:12:46,970 [INFO] __main__: Logs saved to examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1/fcsprocess_20260301_201240.log

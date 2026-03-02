@@ -1,0 +1,37 @@
+sample_id,gate_path,gate_name,gate_type,quadrant_parent,parent,count,absolute_percent,relative_percent,level
+EL4Che_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,5198,76.01637905820415,76.01637905820415,1
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,4136,60.48552208248026,79.56906502500962,2
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3838,56.12752266744662,92.79497098646034,3
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,1,0.014624159110851126,0.02605523710265763,4
+EL4Che_ProteinA_100nM.fcs,"('root',)",TimeQC,RectangleGate,,root,4302,48.142345568487016,48.142345568487016,1
+EL4Che_ProteinA_100nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3336,37.33213965980304,77.54532775453278,2
+EL4Che_ProteinA_100nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3051,34.14279319606088,91.4568345323741,3
+EL4Che_ProteinA_100nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,0,0.0,0.0,4
+EL4Che_ProteinA_10nM.fcs,"('root',)",TimeQC,RectangleGate,,root,4210,46.44748455428067,46.44748455428067,1
+EL4Che_ProteinA_10nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3268,36.054721977052075,77.62470308788598,2
+EL4Che_ProteinA_10nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3044,33.58340688437776,93.14565483476133,3
+EL4Che_ProteinA_10nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,0,0.0,0.0,4
+EL4Che_ProteinA_1nM.fcs,"('root',)",TimeQC,RectangleGate,,root,4126,48.99655622847643,48.99655622847643,1
+EL4Che_ProteinA_1nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3423,40.64837905236908,82.96170625302956,2
+EL4Che_ProteinA_1nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3150,37.406483790523694,92.02453987730061,3
+EL4Che_ProteinA_1nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,0,0.0,0.0,4
+EL4Che_ProteinA_1uM.fcs,"('root',)",TimeQC,RectangleGate,,root,8250,92.7070457354759,92.7070457354759,1
+EL4Che_ProteinA_1uM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,4831,54.2869985391617,58.557575757575755,2
+EL4Che_ProteinA_1uM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,4508,50.657377233397014,93.31401366176775,3
+EL4Che_ProteinA_1uM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,3,0.03371165299471851,0.06654835847382432,4
+EL4Che_ProteinB_100nM.fcs,"('root',)",TimeQC,RectangleGate,,root,6560,75.96988998262884,75.96988998262884,1
+EL4Che_ProteinB_100nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,4247,49.18355529820498,64.7408536585366,2
+EL4Che_ProteinB_100nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3868,44.794441227562245,91.07605368495409,3
+EL4Che_ProteinB_100nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,2,0.023161551823972205,0.0517063081695967,4
+EL4Che_ProteinB_10nM.fcs,"('root',)",TimeQC,RectangleGate,,root,3367,34.15153666700477,34.15153666700477,1
+EL4Che_ProteinB_10nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,2420,24.546100010143014,71.87407187407187,2
+EL4Che_ProteinB_10nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2194,22.253778273658586,90.6611570247934,3
+EL4Che_ProteinB_10nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,1,0.01014301653311695,0.04557885141294439,4
+EL4Che_ProteinB_1nM.fcs,"('root',)",TimeQC,RectangleGate,,root,4210,42.14636099709681,42.14636099709681,1
+EL4Che_ProteinB_1nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3134,31.374511963159474,74.4418052256532,2
+EL4Che_ProteinB_1nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2854,28.57142857142857,91.06573069559668,3
+EL4Che_ProteinB_1nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,0,0.0,0.0,4
+EL4Che_ProteinB_1uM.fcs,"('root',)",TimeQC,RectangleGate,,root,3421,33.69115619460311,33.69115619460311,1
+EL4Che_ProteinB_1uM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,2655,26.147331101043925,77.60888629055832,2
+EL4Che_ProteinB_1uM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2403,23.66555052196179,90.5084745762712,3
+EL4Che_ProteinB_1uM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",GFP+,RectangleGate,,Singlets,8,0.07878668505022651,0.3329171868497711,4

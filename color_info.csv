@@ -1,0 +1,8 @@
+Fluorophore,Hex,CytoFlex,ZE5
+FSC,None,FSC-A,FSC 488/10-A
+SSC,None,SSC-A,SSC 488/10-A
+LDAqua,#98FB98,None,LIVE-DEAD Fixable Aqua-A
+APC,#FF7F50,None,APC (Allophycocyanin)-A
+PE,#FFA500,None,None
+mCherry,#FF6347,Y610-A,mCherry-A
+GFP,#7CFC00,B525-A,EGFP-A

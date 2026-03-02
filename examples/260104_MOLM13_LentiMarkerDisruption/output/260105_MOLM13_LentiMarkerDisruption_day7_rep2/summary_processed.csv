@@ -1,0 +1,25 @@
+sample_id,gate_path,gate_name,gate_type,quadrant_parent,parent,count,absolute_percent,relative_percent,level
+MOLM13Control_Mock_mChBla.fcs,"('root',)",TimeQC,RectangleGate,,root,13787,91.91333333333334,91.91333333333334,1
+MOLM13Control_Mock_mChBla.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,9759,65.06,70.78407195183868,2
+MOLM13Control_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,8345,55.63333333333333,85.51081053386618,3
+MOLM13Control_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",Live,RectangleGate,,Singlets,8052,53.68000000000001,96.48891551827442,4
+MOLM13Control_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live')",mCherry+,RectangleGate,,Live,6413,42.75333333333333,79.6448087431694,5
+MOLM13Control_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live', 'mCherry+')",APC-,RectangleGate,,mCherry+,0,0.0,0.0,6
+MOLM13Control_ProteinA_mChBla.fcs,"('root',)",TimeQC,RectangleGate,,root,15000,100.0,100.0,1
+MOLM13Control_ProteinA_mChBla.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,11431,76.20666666666666,76.20666666666666,2
+MOLM13Control_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,10468,69.78666666666666,91.57554019770798,3
+MOLM13Control_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",Live,RectangleGate,,Singlets,10197,67.97999999999999,97.41115781429117,4
+MOLM13Control_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live')",mCherry+,RectangleGate,,Live,8193,54.620000000000005,80.3471609296852,5
+MOLM13Control_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live', 'mCherry+')",APC-,RectangleGate,,mCherry+,0,0.0,0.0,6
+MOLM13Target_Mock_mChBla.fcs,"('root',)",TimeQC,RectangleGate,,root,15000,100.0,100.0,1
+MOLM13Target_Mock_mChBla.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,10948,72.98666666666666,72.98666666666666,2
+MOLM13Target_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,9597,63.980000000000004,87.65984654731457,3
+MOLM13Target_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",Live,RectangleGate,,Singlets,9295,61.96666666666667,96.85318328644368,4
+MOLM13Target_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live')",mCherry+,RectangleGate,,Live,7750,51.66666666666667,83.37816030123723,5
+MOLM13Target_Mock_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live', 'mCherry+')",APC-,RectangleGate,,mCherry+,0,0.0,0.0,6
+MOLM13Target_ProteinA_mChBla.fcs,"('root',)",TimeQC,RectangleGate,,root,15000,100.0,100.0,1
+MOLM13Target_ProteinA_mChBla.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,10500,70.0,70.0,2
+MOLM13Target_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,9008,60.053333333333335,85.7904761904762,3
+MOLM13Target_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",Live,RectangleGate,,Singlets,8699,57.99333333333333,96.56971580817051,4
+MOLM13Target_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live')",mCherry+,RectangleGate,,Live,6977,46.513333333333335,80.20462122082999,5
+MOLM13Target_ProteinA_mChBla.fcs,"('root', 'TimeQC', 'Viable', 'Singlets', 'Live', 'mCherry+')",APC-,RectangleGate,,mCherry+,0,0.0,0.0,6

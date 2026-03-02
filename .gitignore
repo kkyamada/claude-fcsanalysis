@@ -5,3 +5,5 @@ logs/
 *.eps
 *.fcs
 *.DS_Store
+*.pyc
+notebooks/test.ipynb

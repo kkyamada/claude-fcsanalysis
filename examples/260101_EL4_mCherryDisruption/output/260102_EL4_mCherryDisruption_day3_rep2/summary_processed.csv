@@ -1,0 +1,17 @@
+sample_id,gate_path,gate_name,gate_type,quadrant_parent,parent,count,absolute_percent,relative_percent,level
+EL4Che_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,4370,37.45286252999657,37.45286252999657,1
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3280,28.111073020226257,75.05720823798627,2
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2933,25.137127185464518,89.42073170731707,3
+EL4Che_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,55,0.4713747000342818,1.8752130923968633,4
+EL4Che_ProteinC_400nM.fcs,"('root',)",TimeQC,RectangleGate,,root,3179,29.082426127527217,29.082426127527217,1
+EL4Che_ProteinC_400nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,2453,22.440764797365294,77.16262975778547,2
+EL4Che_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,2225,20.35495380111609,90.70525886669385,3
+EL4Che_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,1067,9.761229530692527,47.955056179775276,4
+EL4Control_Mock_0nM.fcs,"('root',)",TimeQC,RectangleGate,,root,6107,27.89093898428937,27.89093898428937,1
+EL4Control_Mock_0nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3404,15.546218487394958,55.73931553954479,2
+EL4Control_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3232,14.760686883449031,94.94712103407755,3
+EL4Control_Mock_0nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,40,0.18268176835951772,1.2376237623762376,4
+EL4Control_ProteinC_400nM.fcs,"('root',)",TimeQC,RectangleGate,,root,6068,47.280660744896366,47.280660744896366,1
+EL4Control_ProteinC_400nM.fcs,"('root', 'TimeQC')",Viable,PolygonGate,,TimeQC,3602,28.0660744896369,59.36058009228741,2
+EL4Control_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable')",Singlets,PolygonGate,,Viable,3332,25.96228767336762,92.50416435313714,3
+EL4Control_ProteinC_400nM.fcs,"('root', 'TimeQC', 'Viable', 'Singlets')",mCherry-,RectangleGate,,Singlets,55,0.4285491662770765,1.6506602641056423,4

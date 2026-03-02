@@ -1,0 +1,17 @@
+{
+  "input_dir": "examples/260105_HEK293T_GFPDisruption/data/260106_HEK293T_GFPDisruption_day3_rep2",
+  "output_dir": "examples/260105_HEK293T_GFPDisruption/output/260106_HEK293T_GFPDisruption_day3_rep2",
+  "input_gml": "gating_strategies/default_gates_CytoFlex_HEK293T.gml",
+  "color_csv": "color_info.csv",
+  "flowcytometer": "CytoFlex",
+  "turnoff_timeqc": false,
+  "verbose": false,
+  "ctrl_key": "Mock",
+  "color_live": null,
+  "color_marker": "mCherry+",
+  "marker_n_components": 1,
+  "marker_mode": "single_reverse",
+  "color_quant": "GFP-",
+  "thresh_ratio": 0.95,
+  "vis_mode": "last"
+}

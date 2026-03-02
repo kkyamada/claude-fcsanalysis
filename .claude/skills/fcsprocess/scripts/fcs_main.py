@@ -25,13 +25,12 @@ logger = logging.getLogger(__name__)
 import warnings
 warnings.filterwarnings('ignore')
 
-def main(args):
+def process_single_dir(args, input_dir, output_dir):
+    """Process a single directory containing .fcs files."""
     # Path settings
-    if args.output_dir == None:
-        args.output_dir = args.input_dir.parent.parent / Path("output") / args.input_dir.name
-    if not args.output_dir.exists:
-        os.makedirs(args.output_dir)
-    fig_path = args.output_dir/Path("figures")
+    if not output_dir.exists():
+        os.makedirs(output_dir)
+    fig_path = output_dir / Path("figures")
     if not fig_path.exists():
         os.makedirs(fig_path)
     try:
@@ -42,7 +41,7 @@ def main(args):
 
     # Set up file handler for logging
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_path = args.output_dir / Path(f"fcsprocess_{timestamp}.log")
+    log_path = output_dir / Path(f"fcsprocess_{timestamp}.log")
     file_handler = logging.FileHandler(log_path)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
@@ -53,9 +52,9 @@ def main(args):
     dict_color = df_color.set_index("Info")[args.flowcytometer].to_dict()
     max_bit = dict_color["max_bit"].strip("bit")
     max_val = 2**int(max_bit)-1
-    mypalette = process_id.setup_fcsprocess(args.input_dir, dict_color)
+    mypalette = process_id.setup_fcsprocess(input_dir, dict_color)
     logger.info(f"Initializing the gating strategy with {args.input_gml}")
-    session = primary_gates.init_session(args.input_dir, args.input_gml, max_val=max_val)
+    session = primary_gates.init_session(input_dir, args.input_gml, max_val=max_val)
     
     # Set up primary gates (TimeQC -> Viable -> Singlets)
     logger.info(f"Optimizing the time gate based on event rates within each sample...")
@@ -125,21 +124,21 @@ def main(args):
         verbose = args.verbose,
         fig_dir = fig_path,
     )
-    gs_path = Path(args.output_dir) / "gating_strategy.gml"
+    gs_path = Path(output_dir) / "gating_strategy.gml"
     with open(gs_path, "wb") as fh:
         fk.export_gatingml(session.gating_strategy, fh)
     # flowkit==1.3.0 cannot output GatingML 2.0 compliant format. Convert and overwrite it manually.
-    # conv_path = Path(args.output_dir) / "gating_strategy_standard.gml"
+    # conv_path = Path(output_dir) / "gating_strategy_standard.gml"
     utils.convert_gml_to_standard(gs_path, gs_path)
     logger.info(f"Finished setting up gates. Gating strategy is saved to {gs_path}.")
-    
+
 
     # Process all samples
     logger.info(f"Processing samples and visualizing results...")
     visualization.process_data(
         session,
-        fig_dir = Path(args.output_dir) / Path("figures"),
-        output_dir = args.output_dir,
+        fig_dir = Path(output_dir) / Path("figures"),
+        output_dir = output_dir,
         max_val = max_val,
         savefig = True,
         verbose = args.verbose,
@@ -147,8 +146,10 @@ def main(args):
     )
 
     # Save arguments to output directory
-    args_path = args.output_dir / f"args_{timestamp}.json"
+    args_path = output_dir / f"args_{timestamp}.json"
     args_dict = {k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()}
+    args_dict["input_dir"] = str(input_dir)  # Add the actual input_dir used
+    args_dict["output_dir"] = str(output_dir)  # Add the actual output_dir used
     with open(args_path, "w") as f:
         json.dump(args_dict, f, indent=2)
     logger.info(f"Arguments saved to {args_path}")
@@ -159,13 +160,52 @@ def main(args):
     file_handler.close()
 
 
+def main(args):
+    """Main entry point that processes all data directories under experiment_dir/data/."""
+    experiment_dir = args.experiment_dir
+    data_dir = experiment_dir / "data"
+
+    if not data_dir.exists():
+        raise ValueError(f"Data directory not found: {data_dir}")
+
+    # Find all subdirectories under data/
+    data_subdirs = [d for d in data_dir.iterdir() if d.is_dir()]
+
+    if not data_subdirs:
+        raise ValueError(f"No subdirectories found under {data_dir}")
+
+    logger.info(f"Found {len(data_subdirs)} data directories to process: {[d.name for d in data_subdirs]}")
+
+    # Process each data directory
+    for input_dir in sorted(data_subdirs):
+        # Check if directory contains .fcs files
+        fcs_files = list(input_dir.glob("*.fcs"))
+        if not fcs_files:
+            logger.warning(f"Skipping {input_dir.name}: no .fcs files found")
+            continue
+
+        logger.info(f"Processing {input_dir.name} ({len(fcs_files)} .fcs files)...")
+
+        # Set output directory
+        output_dir = experiment_dir / "output" / input_dir.name
+
+        try:
+            process_single_dir(args, input_dir, output_dir)
+            logger.info(f"Successfully processed {input_dir.name}")
+        except Exception as e:
+            logger.error(f"Failed to process {input_dir.name}: {e}")
+            if args.verbose:
+                import traceback
+                traceback.print_exc()
+            continue
+
+    logger.info("All directories processed.")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_dir", type=Path, required=True,
-                        help="Path to input directory which contains .fcs files"
-    )
-    parser.add_argument("--output_dir", type=Path, required=False, default=None,
-                        help="Path to output directory. By default, it generates 'output' directory in the same level as input_dir."
+    parser.add_argument("--experiment_dir", type=Path, required=True,
+                        help="Path to experiment directory. The script will automatically find and process all directories under 'experiment_dir/data/'."
     )
     parser.add_argument("--input_gml", type=Path, required=True,
                         help="Path to an input gml file to specify gating strategy to start with for cell/single identifications with FSC/SSC plots."

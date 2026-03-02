@@ -1,0 +1,5 @@
+2026-03-02 01:19:09,217 [INFO] __main__: Starting quant_fluor50 analysis
+2026-03-02 01:19:09,217 [INFO] __main__: Experiment directory: examples/260105_HEK293T_GFPDisruption
+2026-03-02 01:19:09,218 [INFO] __main__: Output directory: examples/260105_HEK293T_GFPDisruption/output_fluor50
+2026-03-02 01:19:09,227 [INFO] __main__: Marker channel: mCherry-A -> mCherry-A
+2026-03-02 01:19:09,227 [INFO] __main__: Target channel: GFP-A -> GFP-A

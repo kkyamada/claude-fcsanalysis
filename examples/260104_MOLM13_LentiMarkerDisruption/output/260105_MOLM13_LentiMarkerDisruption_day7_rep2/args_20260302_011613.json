@@ -1,0 +1,18 @@
+{
+  "experiment_dir": "examples/260104_MOLM13_LentiMarkerDisruption",
+  "input_gml": "gating_strategies/default_gates_ZE5_MOLM13.gml",
+  "color_csv": "color_info.csv",
+  "flowcytometer": "ZE5",
+  "turnoff_timeqc": false,
+  "verbose": false,
+  "ctrl_key": "Mock",
+  "color_live": "LDAqua-",
+  "color_marker": "mCherry+",
+  "marker_n_components": 2,
+  "marker_mode": "single",
+  "color_quant": "APC-",
+  "thresh_ratio": 0.95,
+  "vis_mode": "default",
+  "input_dir": "examples/260104_MOLM13_LentiMarkerDisruption/data/260105_MOLM13_LentiMarkerDisruption_day7_rep2",
+  "output_dir": "examples/260104_MOLM13_LentiMarkerDisruption/output/260105_MOLM13_LentiMarkerDisruption_day7_rep2"
+}

@@ -1,6 +1,5 @@
 {
-  "input_dir": "examples/260106_HEK293T_mCherry/data/260106_HEK293T_mCherry_day3_rep1",
-  "output_dir": "examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1",
+  "experiment_dir": "examples/260106_HEK293T_mCherry",
   "input_gml": "gating_strategies/default_gates_CytoFlex_HEK293T.gml",
   "color_csv": "color_info.csv",
   "flowcytometer": "CytoFlex",
@@ -13,5 +12,7 @@
   "marker_mode": "single",
   "color_quant": "mCherry+",
   "thresh_ratio": 0.99,
-  "vis_mode": "default"
+  "vis_mode": "default",
+  "input_dir": "examples/260106_HEK293T_mCherry/data/260106_HEK293T_mCherry_day3_rep1",
+  "output_dir": "examples/260106_HEK293T_mCherry/output/260106_HEK293T_mCherry_day3_rep1"
 }

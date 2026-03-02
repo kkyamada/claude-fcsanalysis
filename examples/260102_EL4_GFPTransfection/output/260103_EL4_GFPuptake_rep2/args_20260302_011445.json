@@ -1,6 +1,5 @@
 {
-  "input_dir": "examples/260102_EL4_GFPTransfection/data/260103_EL4_GFPuptake_rep2",
-  "output_dir": "examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2",
+  "experiment_dir": "examples/260102_EL4_GFPTransfection",
   "input_gml": "gating_strategies/default_gates_CytoFlex_EL4.gml",
   "color_csv": "color_info.csv",
   "flowcytometer": "CytoFlex",
@@ -13,5 +12,7 @@
   "marker_mode": "single",
   "color_quant": "GFP+",
   "thresh_ratio": 0.99,
-  "vis_mode": "default"
+  "vis_mode": "default",
+  "input_dir": "examples/260102_EL4_GFPTransfection/data/260103_EL4_GFPuptake_rep2",
+  "output_dir": "examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2"
 }

@@ -42,10 +42,21 @@ claude-fcsanalysis/
 poetry install
 
 # Run FCS processing (via skill or directly)
+# The script processes all subdirectories under experiment_dir/data/
 python .claude/skills/fcsprocess/scripts/fcs_main.py \
-    --input_dir <path_to_fcs_files> \
+    --experiment_dir <path_to_experiment> \
     --input_gml <path_to_gating_strategy.gml> \
     --color_quant "mCherry+/GFP-"
+
+# Expected directory structure:
+# experiment_dir/
+# ├── data/
+# │   ├── experiment_20240101/   # Contains .fcs files
+# │   ├── experiment_20240102/   # Contains .fcs files
+# │   └── ...
+# └── output/                    # Created automatically
+#     ├── experiment_20240101/   # Output for each data dir
+#     └── experiment_20240102/
 ```
 
 ## Key Dependencies

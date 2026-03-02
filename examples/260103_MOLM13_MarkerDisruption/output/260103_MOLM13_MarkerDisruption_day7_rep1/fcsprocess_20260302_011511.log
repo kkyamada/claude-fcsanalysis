@@ -1,0 +1,34 @@
+2026-03-02 01:15:11,733 [INFO] fcs_utils.process_id: Processing .fcs files in examples/260103_MOLM13_MarkerDisruption/data/260103_MOLM13_MarkerDisruption_day7_rep1
+2026-03-02 01:15:11,850 [INFO] fcs_utils.process_id: Finished setting up.
+2026-03-02 01:15:11,851 [INFO] __main__: Initializing the gating strategy with gating_strategies/default_gates_ZE5_MOLM13.gml
+2026-03-02 01:15:11,965 [INFO] __main__: Optimizing the time gate based on event rates within each sample...
+2026-03-02 01:15:11,973 [INFO] __main__: Optimizing the singlet identification using all samples...
+2026-03-02 01:15:22,605 [INFO] __main__: Optimizing the stained live/dead gate using all samples...
+2026-03-02 01:15:22,629 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate Live.
+2026-03-02 01:15:22,899 [INFO] fcs_utils.secondary_gates: Number of mixture components: 2
+2026-03-02 01:15:22,905 [INFO] fcs_utils.secondary_gates: Expected counts: [35600.75834037  1532.24165963]
+2026-03-02 01:15:22,905 [INFO] fcs_utils.secondary_gates: Means:
+[[0.6652259 ]
+ [0.73827109]]
+2026-03-02 01:15:22,905 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.0010423 ]]
+
+ [[0.03233484]]]
+2026-03-02 01:15:22,906 [INFO] fcs_utils.secondary_gates: Selected component: 0
+2026-03-02 01:15:22,906 [INFO] __main__: Detected control samples: ['MOLM13_Mock_0uM.fcs']
+2026-03-02 01:15:22,906 [INFO] __main__: Setting up quantification gates APC- using control samples...
+2026-03-02 01:15:22,916 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate APC-.
+2026-03-02 01:15:22,921 [INFO] fcs_utils.secondary_gates: Number of mixture components: 1
+2026-03-02 01:15:22,921 [INFO] fcs_utils.secondary_gates: Expected counts: [7974.]
+2026-03-02 01:15:22,921 [INFO] fcs_utils.secondary_gates: Means:
+[[1.19987474]]
+2026-03-02 01:15:22,922 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.00193954]]]
+2026-03-02 01:15:22,922 [INFO] fcs_utils.secondary_gates: Selected component: 0
+2026-03-02 01:15:22,929 [INFO] __main__: Finished setting up gates. Gating strategy is saved to examples/260103_MOLM13_MarkerDisruption/output/260103_MOLM13_MarkerDisruption_day7_rep1/gating_strategy.gml.
+2026-03-02 01:15:22,929 [INFO] __main__: Processing samples and visualizing results...
+2026-03-02 01:15:27,671 [INFO] fcs_utils.visualization: Finished processing samples.
+2026-03-02 01:15:27,671 [INFO] fcs_utils.visualization: Figures are saved to examples/260103_MOLM13_MarkerDisruption/output/260103_MOLM13_MarkerDisruption_day7_rep1/figures.
+2026-03-02 01:15:27,671 [INFO] fcs_utils.visualization: Output is saved to examples/260103_MOLM13_MarkerDisruption/output/260103_MOLM13_MarkerDisruption_day7_rep1/summary_processed.csv.
+2026-03-02 01:15:27,672 [INFO] __main__: Arguments saved to examples/260103_MOLM13_MarkerDisruption/output/260103_MOLM13_MarkerDisruption_day7_rep1/args_20260302_011511.json
+2026-03-02 01:15:27,672 [INFO] __main__: Logs saved to examples/260103_MOLM13_MarkerDisruption/output/260103_MOLM13_MarkerDisruption_day7_rep1/fcsprocess_20260302_011511.log

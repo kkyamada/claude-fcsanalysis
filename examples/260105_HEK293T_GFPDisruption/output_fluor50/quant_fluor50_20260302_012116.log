@@ -1,0 +1,33 @@
+2026-03-02 01:21:16,355 [INFO] __main__: Starting quant_fluor50 analysis
+2026-03-02 01:21:16,355 [INFO] __main__: Experiment directory: examples/260105_HEK293T_GFPDisruption
+2026-03-02 01:21:16,355 [INFO] __main__: Output directory: examples/260105_HEK293T_GFPDisruption/output_fluor50
+2026-03-02 01:21:16,363 [INFO] __main__: Marker channel: mCherry-A -> mCherry-A
+2026-03-02 01:21:16,363 [INFO] __main__: Target channel: GFP-A -> GFP-A
+2026-03-02 01:21:16,363 [INFO] __main__: Processing examples/260105_HEK293T_GFPDisruption/data/260105_HEK293T_GFPDisruption_day3_rep1...
+2026-03-02 01:21:16,613 [INFO] fcs_utils.fluor50: Processing HEK293T_Mock_0ng.fcs...
+2026-03-02 01:21:16,622 [INFO] fcs_utils.fluor50: 	Detected number of events: 1
+2026-03-02 01:21:16,622 [INFO] fcs_utils.fluor50: Number of gated events for HEK293T_Mock_0ng.fcs is smaller than window_size 100. Maybe a control sample?
+2026-03-02 01:21:16,622 [INFO] fcs_utils.fluor50: Processing HEK293T_Mutant_500ng.fcs...
+2026-03-02 01:21:16,634 [INFO] fcs_utils.fluor50: 	Detected number of events: 4800
+2026-03-02 01:21:16,927 [INFO] fcs_utils.fluor50: 	Fluor50 value: 0.9816
+2026-03-02 01:21:18,250 [INFO] fcs_utils.fluor50: Processing HEK293T_WT_500ng.fcs...
+2026-03-02 01:21:18,262 [INFO] fcs_utils.fluor50: 	Detected number of events: 5065
+2026-03-02 01:21:18,570 [INFO] fcs_utils.fluor50: 	Fluor50 value: 0.5676
+2026-03-02 01:21:20,252 [INFO] __main__: Processing examples/260105_HEK293T_GFPDisruption/data/260106_HEK293T_GFPDisruption_day3_rep2...
+2026-03-02 01:21:20,331 [INFO] fcs_utils.fluor50: Processing HEK293T_Mock_0ng.fcs...
+2026-03-02 01:21:20,342 [INFO] fcs_utils.fluor50: 	Detected number of events: 0
+2026-03-02 01:21:20,342 [INFO] fcs_utils.fluor50: Number of gated events for HEK293T_Mock_0ng.fcs is smaller than window_size 100. Maybe a control sample?
+2026-03-02 01:21:20,342 [INFO] fcs_utils.fluor50: Processing HEK293T_Mutant_500ng.fcs...
+2026-03-02 01:21:20,354 [INFO] fcs_utils.fluor50: 	Detected number of events: 5252
+2026-03-02 01:21:20,678 [INFO] fcs_utils.fluor50: 	Fluor50 value: 1.0004
+2026-03-02 01:21:22,222 [INFO] fcs_utils.fluor50: Processing HEK293T_WT_500ng.fcs...
+2026-03-02 01:21:22,233 [INFO] fcs_utils.fluor50: 	Detected number of events: 5588
+2026-03-02 01:21:22,630 [INFO] fcs_utils.fluor50: 	Fluor50 value: 0.5868
+2026-03-02 01:21:24,734 [INFO] __main__: Saved aggregated results to examples/260105_HEK293T_GFPDisruption/output_fluor50/fluor50_summary.csv
+2026-03-02 01:21:24,734 [INFO] __main__: === Fluor50 Summary ===
+2026-03-02 01:21:24,734 [INFO] __main__: Total samples processed: 4
+2026-03-02 01:21:24,734 [INFO] __main__: Mean Fluor50: 119886.5578
+2026-03-02 01:21:24,734 [INFO] __main__: Std Fluor50: 137581.1917
+2026-03-02 01:21:24,734 [INFO] __main__: Analysis complete.
+2026-03-02 01:21:24,735 [INFO] __main__: Arguments saved to examples/260105_HEK293T_GFPDisruption/output_fluor50/args_20260302_012116.json
+2026-03-02 01:21:24,735 [INFO] __main__: Logs saved to examples/260105_HEK293T_GFPDisruption/output_fluor50/quant_fluor50_20260302_012116.log

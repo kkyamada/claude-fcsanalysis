@@ -1,0 +1,22 @@
+2026-03-02 01:14:45,669 [INFO] fcs_utils.process_id: Processing .fcs files in examples/260102_EL4_GFPTransfection/data/260103_EL4_GFPuptake_rep2
+2026-03-02 01:14:45,881 [INFO] fcs_utils.process_id: Finished setting up.
+2026-03-02 01:14:45,881 [INFO] __main__: Initializing the gating strategy with gating_strategies/default_gates_CytoFlex_EL4.gml
+2026-03-02 01:14:46,232 [INFO] __main__: Optimizing the time gate based on event rates within each sample...
+2026-03-02 01:14:46,241 [INFO] __main__: Optimizing the singlet identification using all samples...
+2026-03-02 01:14:56,694 [INFO] __main__: Detected control samples: ['EL4Che_Mock_0nM.fcs']
+2026-03-02 01:14:56,695 [INFO] __main__: Setting up quantification gates GFP+ using control samples...
+2026-03-02 01:14:56,699 [INFO] fcs_utils.secondary_gates: Fitting GMM for defining the gate GFP+.
+2026-03-02 01:14:56,705 [INFO] fcs_utils.secondary_gates: Number of mixture components: 1
+2026-03-02 01:14:56,706 [INFO] fcs_utils.secondary_gates: Expected counts: [3838.]
+2026-03-02 01:14:56,706 [INFO] fcs_utils.secondary_gates: Means:
+[[0.48705826]]
+2026-03-02 01:14:56,706 [INFO] fcs_utils.secondary_gates: Covariances:
+[[[0.002374]]]
+2026-03-02 01:14:56,706 [INFO] fcs_utils.secondary_gates: Selected component: 0
+2026-03-02 01:14:56,714 [INFO] __main__: Finished setting up gates. Gating strategy is saved to examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2/gating_strategy.gml.
+2026-03-02 01:14:56,714 [INFO] __main__: Processing samples and visualizing results...
+2026-03-02 01:15:02,504 [INFO] fcs_utils.visualization: Finished processing samples.
+2026-03-02 01:15:02,505 [INFO] fcs_utils.visualization: Figures are saved to examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2/figures.
+2026-03-02 01:15:02,505 [INFO] fcs_utils.visualization: Output is saved to examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2/summary_processed.csv.
+2026-03-02 01:15:02,505 [INFO] __main__: Arguments saved to examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2/args_20260302_011445.json
+2026-03-02 01:15:02,505 [INFO] __main__: Logs saved to examples/260102_EL4_GFPTransfection/output/260103_EL4_GFPuptake_rep2/fcsprocess_20260302_011445.log

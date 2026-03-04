@@ -1,0 +1,98 @@
+# FCS Plot Configuration Template
+# Copy this file to your experiment directory as plot_config.yaml
+# and customize settings as needed.
+
+# Style preset: "publication", "exploratory", or "presentation"
+# This sets sensible defaults that can be overridden below
+style: "publication"
+
+# Figure settings
+figure:
+  dpi: 300                    # Resolution for saved figures
+  figsize_single: [4, 3]      # [width, height] for single plots
+  figsize_multi: [8, 6]       # [width, height] for multi-panel plots
+  max_cols: 4                 # Maximum columns in grid layout
+  facecolor: "white"          # Background color
+  tight_layout: true          # Auto-adjust subplot spacing
+
+# Font settings
+font:
+  family: "sans-serif"
+  size_title: 14
+  size_label: 12
+  size_tick: 10
+  size_legend: 9
+
+# Color settings
+colors:
+  palette: "Set2"             # Seaborn color palette name
+  control_color: "#808080"    # Color for control/mock samples (gray)
+  # Patterns to identify control samples (case-sensitive, matches anywhere in string)
+  control_patterns:
+    - "Control"
+    - "Mock"
+    - "Ctrl"
+    - "ctrl"
+    - "mock"
+    - "control"
+  highlight_color: "#4A7FE8"  # Color for highlighting
+
+# Bar plot settings
+bar:
+  width: 0.7                  # Bar width (0-1)
+  edgecolor: "black"          # Bar edge color
+  linewidth: 1.0              # Bar edge width
+  error_capsize: 5            # Error bar cap size in points
+  error_linewidth: 1.0        # Error bar line width (match bar edge width)
+  show_title: false           # Show plot title
+  show_points: true           # Overlay individual data points
+  point_size: 15              # Size of overlaid points
+  point_alpha: 1.0            # Transparency of points
+  point_facecolor: "white"    # Fill color for points
+  point_edgecolor: "#333333"  # Edge color for points
+  point_linewidth: 1.0        # Edge width for points
+  control_first: true         # Place control/mock samples first (left side)
+
+# Scatter plot settings
+scatter:
+  point_size: 20
+  alpha: 0.7
+  edgecolor: "none"
+
+# Line plot settings
+line:
+  linewidth: 2.0
+  marker: "o"                 # Point marker style
+  markersize: 8
+  error_style: "bars"         # "bars" for whiskers, "band" for shaded area
+  error_capsize: 8            # Error bar cap size
+  error_linewidth: 2.0        # Error bar line width
+  error_alpha: 0.2            # Transparency of error band (when using "band")
+  show_title: false           # Show plot title
+
+# Heatmap settings
+heatmap:
+  cmap: "RdYlBu_r"            # Colormap name
+  annot: true                 # Show values in cells
+  fmt: ".1f"                  # Number format for annotations
+  linewidths: 0.5             # Width of cell borders
+
+# Legend settings
+legend:
+  loc: "best"                 # Legend location
+  frameon: true               # Show legend frame
+  framealpha: 0.9             # Legend frame transparency
+
+# Grid settings
+grid:
+  show: false                 # Show grid lines
+  alpha: 0.3                  # Grid line transparency
+  linestyle: "--"             # Grid line style
+
+# Axis settings
+axes:
+  spines_top: false           # Show top spine
+  spines_right: false         # Show right spine
+  y_percent: true             # Format y-axis as percentage
+  y_lim_auto: true            # Auto-determine y limits
+  y_lim: [0, 100]             # Manual y limits if y_lim_auto is false

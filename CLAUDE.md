@@ -23,13 +23,21 @@ claude-fcsanalysis/
 │   ├── secondary_gates.py        # Marker and quantification gates
 │   ├── visualization.py          # Plotting and figure generation
 │   ├── process_id.py             # Sample ID processing utilities
-│   └── utils_functions.py        # GML conversion utilities
+│   ├── utils_functions.py        # GML conversion utilities
+│   ├── utils_analysis.py         # Analysis helper functions
+│   ├── fluor50.py                # Fluor50 analysis for dose-response
+│   ├── plot_config.py            # Plot configuration system (presets, YAML loading)
+│   └── plot_utils.py             # Plotting utility functions (bar, line, heatmap)
 ├── gating_strategies/            # Default GML gating strategy templates
 │   ├── default_gates_CytoFlex_*.gml
 │   └── default_gates_ZE5_*.gml
 ├── examples/                     # Example datasets with FCS files
-├── .claude/skills/fcsprocess/    # Claude Code skill for FCS processing
-│   └── scripts/fcs_main.py       # Main entry point
+├── .claude/skills/
+│   ├── fcsprocess/               # FCS processing skill
+│   │   └── scripts/fcs_main.py   # Main entry point
+│   └── fcsplot/                  # FCS plotting skill
+│       ├── scripts/fcs_plot.py   # Main entry point
+│       └── plot_config_template.yaml
 ├── color_info.csv                # Fluorophore-to-channel mapping
 ├── logs/                         # Log files (gitignored)
 └── pyproject.toml                # Poetry dependencies
@@ -119,7 +127,48 @@ Key functions in `fcs_utils/visualization.py`:
 
 **Logging Directory**: Use `logs/` for any Claude-generated logs or outputs. This directory is gitignored.
 
-**Skill Available**: `/fcsprocess` - Runs the FCS processing pipeline with hierarchical gating analysis.
+**Skills Available**:
+- `/fcsprocess` - Runs the FCS processing pipeline with hierarchical gating analysis
+- `/fcsplot` - Generates publication-ready plots from summary data with configurable styling
+
+### Past Experiment Examples
+
+See `.claude/skills/fcsplot/EXAMPLES.md` for detailed configurations from past experiments:
+
+| Experiment | Cell Type | Marker | Instrument | Plot Types |
+|------------|-----------|--------|------------|------------|
+| 260101_EL4_mCherryDisruption | EL4 | mCherry | CytoFlex | Bar plot, dose-response |
+| 260102_EL4_GFPTransfection | EL4 | GFP | CytoFlex | Dose-response (symlog), histograms with threshold |
+| 260103_MOLM13_MarkerDisruption | MOLM13 | APC | ZE5 | Histograms with threshold |
+| 260104_MOLM13_LentiMarkerDisruption | MOLM13 | APC (mCherry+ parent) | ZE5 | Histograms with threshold |
+| 260105_HEK293T_GFPDisruption | HEK293T | GFP (mCherry+ parent) | CytoFlex | Bar plot |
+| 260106_HEK293T_mCherry | HEK293T | mCherry | CytoFlex | Bar plot, dose-response |
+
+Reference these examples when working with similar cell types or experimental designs.
+
+### Plot Configuration System
+
+The fcsplot skill uses a layered configuration system:
+1. **Built-in defaults** - Sensible defaults for all settings
+2. **Style presets** - `publication`, `exploratory`, `presentation`
+3. **User config file** - `plot_config.yaml` in experiment directory
+4. **Runtime arguments** - Command-line overrides
+
+Generate a config template:
+```bash
+python .claude/skills/fcsplot/scripts/fcs_plot.py \
+    --experiment_dir <path> --generate_config
+```
+
+Key CLI arguments for fcsplot:
+- `--plot_type`: bar, line, heatmap, multi, or all
+- `--gate_name`: Specific gate to plot (e.g., "mCherry+", "GFP-")
+- `--x_col`: X-axis column (treatment, condition, conc_value, cell_type)
+- `--hue`: Color grouping column (cell_type, treatment, concentration)
+- `--x_scale`: X-axis scale for line plots (linear, symlog)
+- `--x_lim MIN MAX`: X-axis limits
+- `--ylabel`: Custom y-axis label
+- `--output_name`: Custom output filename
 
 ## Common Tasks
 

@@ -1,0 +1,63 @@
+# FCS Plot Configuration
+# Default settings for all plot types (bar, line, scatter, heatmap)
+
+style: "publication"
+
+# Color settings
+colors:
+  palette: "Set2"
+  control_color: "#808080"    # Gray for control/mock samples
+  control_patterns:
+    - "Control"
+    - "Mock"
+    - "Ctrl"
+    - "ctrl"
+    - "mock"
+    - "control"
+  highlight_color: "#4A7FE8"  # Blue for non-control samples
+
+# Bar plot settings
+bar:
+  width: 0.7
+  edgecolor: "black"
+  linewidth: 1.0
+  error_capsize: 8
+  error_linewidth: 2.0
+  show_title: false
+  show_points: true
+  point_size: 18
+  point_alpha: 1.0
+  point_facecolor: "white"
+  point_edgecolor: "#333333"
+  point_linewidth: 1.0
+  control_first: true         # Control samples on left
+
+# Line plot settings
+line:
+  linewidth: 2.0
+  marker: "o"
+  markersize: 8
+  error_style: "bars"         # "bars" for whiskers, "band" for shaded area
+  error_capsize: 8
+  error_linewidth: 2.0
+  show_title: false
+
+# Figure settings
+figure:
+  dpi: 300
+  figsize_single: [6, 4]
+  figsize_multi: [8, 6]
+  max_cols: 4
+
+# Font settings
+font:
+  size_title: 14
+  size_label: 12
+  size_tick: 10
+  size_legend: 10
+
+# Axis settings
+axes:
+  spines_top: false
+  spines_right: false
+  y_percent: true

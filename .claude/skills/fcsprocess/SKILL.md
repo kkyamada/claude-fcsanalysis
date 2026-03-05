@@ -26,7 +26,8 @@ Use the required arguments as follows.
 - `--color_live`: String to indicate fluorophores and +/- symbol to indicate thresholding direction to define stained live/dead cell populations. e.g. LDAqua-
 - `--color_marker`: String to indicate marker fluorophores and +/- symbol to indicate thresholding direction to define cell populations of interest. Up to two keys can be combined with a slash symbol. e.g. mCherry+/GFP-
 - `--marker_thresh`: Threshold ratio for marker gate detection (default: 0.95). Used with `--color_marker` to define population boundaries.
-- `--color_thresh`: Threshold ratio for quantification gate detection (default: 0.98). Used with `--color_quant` to define quantification boundaries.
+- `--quant_thresh`: Threshold ratio for quantification gate detection (default: 0.98). Used with `--color_quant` to define quantification boundaries.
+- `--quant_n_components`: Number of mixture model components for quantification gate detection (default: 1). 1 for unimodal and 2 for bimodal distributions in the control samples.
 - `--marker_mode`: Mode to define if the control sample defined with `--crtl_key` contains the expected marker color. Set as either single (default) or single_reverse. The single mode expects the control sample has the expected marker color, and the single_reverse mode expects the control sample has no marker color.
 - `--marker_n_components`: Number of mixture model components to define marker threshold value (default: 2). 2 for bimodal and 1 for unimodal marker distribution in the control samples.
 - `--vis_mode`: Mode for visualization only relevant if `--color_quant` has one color for quantification. Set as either default (default) or last. The default mode visualize quantification channel vs SSC-A, and the last mode visualize quantification channel vs last used channel during gating.

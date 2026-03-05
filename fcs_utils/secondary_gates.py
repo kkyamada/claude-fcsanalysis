@@ -21,6 +21,7 @@ def setup_quant_gates(
         gate_for_thresh: str,
         sample_id_list: list,
         thresh_ratio: float = 0.995,
+        n_components: int = 1,
         verbose: bool = False,
         fig_dir: Path = Path(""),
 ) -> str:
@@ -35,6 +36,7 @@ def setup_quant_gates(
         gate_for_thresh: Name of the parent/grandparent gate to extract events used for threshold determination.
         sample_id_list: List of samples to use for thresholding.
         thresh_ratio: Ratio to define the threshold in the fitted distribution (default: 0.99).
+        n_components: Number of mixture model components for threshold detection (default: 1).
 
     Returns:
         new_gate: Name of the gate added last.
@@ -52,7 +54,7 @@ def setup_quant_gates(
             sample_id_list = sample_id_list,
             thresh_ratio = thresh_ratio,
             mode = "single_reverse",
-            init_n_components = 1
+            init_n_components = n_components
         )
     elif num_keys == 2:
         # Qudrant gate
@@ -65,6 +67,7 @@ def setup_quant_gates(
             gate_for_thresh = gate_for_thresh,
             sample_id_list = sample_id_list,
             thresh_ratio = thresh_ratio,
+            n_components = n_components,
         )
     else:
         raise ValueError(f"Detected {num_keys} dimensions in {fluor_keys}. Consider reducing it <=2 for quantification.")
@@ -129,6 +132,7 @@ def setup_quadrant_gate(
         gate_for_thresh: str,
         sample_id_list: list,
         thresh_ratio: float = 0.995,
+        n_components: int = 1,
 ) -> str:
     """
     Set up a quadrant gate on two channels to extract the cell population of interest using a mixture model.
@@ -142,6 +146,7 @@ def setup_quadrant_gate(
         gate_for_thresh: Name of the parent/grandparent gate to extract events used for threshold determination.
         sample_id_list: List of samples to use for thresholding.
         thresh_ratio: Ratio to define the threshold in the fitted distribution (default: 0.995).
+        n_components: Number of mixture model components for threshold detection (default: 1).
 
     Returns:
         gate_name: Name of the gate added.
@@ -179,6 +184,7 @@ def setup_quadrant_gate(
         directions = directions,
         thresh_ratio = thresh_ratio,
         model_key = "GMM",
+        init_n_components = n_components,
     )
 
     # Set up quadrant gate sub modules (QuadrantDivider)
@@ -354,6 +360,7 @@ def _estimate_multivariate_range(
         directions: list[str],
         thresh_ratio: float,
         model_key: str = "GMM",
+        init_n_components: int = 1,
 ) -> tuple[np.ndarray, np.ndarray]:
     """
     Estimate the range of the target population by using a mixutre model in a multi-dimensional space.
@@ -364,6 +371,7 @@ def _estimate_multivariate_range(
         directions: List of direction (+/- symbol) to define which population to extract.
         thresh_ratio: Ratio of target population within the fitted model.
         model_key: Key string to choose a mixture model (default: GMM).
+        init_n_components: Initial number of components to start with for the mixture model.
 
     Returns:
         range_mins, range_maxes: Tuple of min and max values in each dimension to define the range of the target population.
@@ -382,7 +390,11 @@ def _estimate_multivariate_range(
     # Assume bimodal distribution or unimodal distribution + noise.
     if model_key == "GMM":
         # Bayesian Gaussian Mixture Model
-        gmm = BayesianGaussianMixture(random_state=42)
+        gmm = BayesianGaussianMixture(
+            random_state=42,
+            weight_concentration_prior=1.0,
+            n_components=init_n_components
+        )
         gmm.fit(data)
         n_components = int(gmm.get_params()["n_components"])
         logger.info(f"Number of mixture components: {n_components}")

@@ -6,7 +6,7 @@
 # --flowcytometer CytoFlex \
 # --color_quant mCherry- \
 # --ctrl_key Mock \
-# --thresh_ratio 0.95
+# --quant_thresh 0.95
 
 poetry run python .claude/skills/quant_fluor50/scripts/quant_fluor50_main.py \
 --experiment_dir ./examples/260105_HEK293T_GFPDisruption/ \

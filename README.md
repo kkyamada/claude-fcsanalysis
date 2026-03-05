@@ -146,7 +146,9 @@ output/
 | `--color_marker` | Marker for pre-gating (e.g., `mCherry+`) | None |
 | `--color_quant` | Markers for quantification | Required |
 | `--marker_thresh` | Threshold ratio for marker gate detection | `0.95` |
-| `--color_thresh` | Threshold ratio for quantification gate detection | `0.98` |
+| `--marker_n_components` | Number of GMM components for marker detection | `2` |
+| `--quant_thresh` | Threshold ratio for quantification gate detection | `0.98` |
+| `--quant_n_components` | Number of GMM components for quantification detection | `1` |
 | `--verbose` | Enable diagnostic output | False |
 
 ### Marker Syntax
@@ -176,7 +178,7 @@ For a new cell type or flowcytometer, first visit `notebooks/gate_initialization
 ### Poor gating results
 1. Run with `--verbose` to generate diagnostic plots
 2. Check that `--ctrl_key` matches your control sample naming
-3. Adjust `--color_thresh` for quantification or `--marker_thresh` for marker gates (lower = more stringent threshold)
+3. Adjust `--quant_thresh` for quantification or `--marker_thresh` for marker gates (lower = more stringent threshold)
 
 ### Channel not found
 Ensure your fluorophore is defined in `color_info.csv` with the correct channel name for your flowcytometer.

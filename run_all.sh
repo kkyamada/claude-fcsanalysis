@@ -7,7 +7,7 @@ poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
 --flowcytometer CytoFlex \
 --color_quant mCherry- \
 --ctrl_key Mock \
---thresh_ratio 0.95
+--quant_thresh 0.95
 
 # Experiment type: GFP uptake assay in EL4 cells
 poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
@@ -16,7 +16,7 @@ poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
 --flowcytometer CytoFlex \
 --color_quant GFP+ \
 --ctrl_key Mock \
---thresh_ratio 0.99
+--quant_thresh 0.99
 
 
 # Experiment type: Surface marker disruption assay in MOLM13 cells
@@ -27,7 +27,7 @@ poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
 --color_live LDAqua- \
 --color_quant APC- \
 --ctrl_key Mock \
---thresh_ratio 0.95
+--quant_thresh 0.95
 
 # Experiment type: Surface marker disruption assay in lentivirally transduced MOLM13 cells
 poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
@@ -38,7 +38,7 @@ poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
 --color_marker mCherry+ \
 --color_quant APC- \
 --ctrl_key Mock \
---thresh_ratio 0.95 \
+--quant_thresh 0.95 \
 --marker_mode single \
 --marker_n_components 2
 
@@ -50,9 +50,10 @@ poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
 --color_marker mCherry+ \
 --color_quant GFP- \
 --ctrl_key Mock \
---thresh_ratio 0.95 \
+--quant_thresh 0.98 \
 --marker_mode single_reverse \
 --marker_n_components 1 \
+--marker_thresh 0.95 \
 --vis_mode last
 
 # Experiment type: mCherry transfection assay in HEK293T mCherry reporter cells
@@ -62,4 +63,4 @@ poetry run python .claude/skills/fcsprocess/scripts/fcs_main.py \
 --flowcytometer CytoFlex \
 --color_quant mCherry+ \
 --ctrl_key Mock \
---thresh_ratio 0.99
+--quant_thresh 0.99

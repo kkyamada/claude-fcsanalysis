@@ -120,7 +120,8 @@ def process_single_dir(args, input_dir, output_dir):
         parent_gate = last_gate,
         gate_for_thresh = gate_thresh,
         sample_id_list = ctrl_id_list,
-        thresh_ratio = args.color_thresh,
+        thresh_ratio = args.quant_thresh,
+        n_components = args.quant_n_components,
         verbose = args.verbose,
         fig_dir = fig_path,
     )
@@ -248,8 +249,11 @@ if __name__ == "__main__":
     parser.add_argument("--color_quant", type=str, required=True,
                         help="Keys of fluorescent channels used for quantification. Up to three markers can be used with a slash separation (example: mCherry+/APC-)."
     )
-    parser.add_argument("--color_thresh", type=float, required=False, default=0.98,
+    parser.add_argument("--quant_thresh", type=float, required=False, default=0.98,
                         help="Threshold ratio for quantification gate detection (default: 0.98). Used with --color_quant to define quantification boundaries."
+    )
+    parser.add_argument("--quant_n_components", type=int, required=False, default=1,
+                        help="Number of mixture model components for quantification gate detection (default: 1 i.e. unimodal distribution). Set it to 2 for bimodal distributions."
     )
     parser.add_argument("--vis_mode", type=str, required=False, default="default",
                         help="Mode key to define visualization for the quantified population. Only relevant for single-color quantification. default: Quant vs SSC-A. last: Quant vs last x-axis.")

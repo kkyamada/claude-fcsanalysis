@@ -139,6 +139,7 @@ def plot_concentration_response(
     value_col: str = "relative_percent",
     x_scale: str = "linear",
     x_lim: Optional[list] = None,
+    xlabel: Optional[str] = None,
     ylabel: Optional[str] = None,
     output_name: Optional[str] = None,
 ) -> None:
@@ -154,6 +155,7 @@ def plot_concentration_response(
         value_col: Value column to plot
         x_scale: X-axis scale ("linear" or "symlog")
         x_lim: X-axis limits as [min, max]
+        xlabel: Custom x-axis label
         ylabel: Custom y-axis label
         output_name: Custom output filename
     """
@@ -180,7 +182,7 @@ def plot_concentration_response(
         ax=ax,
         config=config,
         title=f"{gate_name} Concentration Response",
-        xlabel="Concentration",
+        xlabel=xlabel or "Concentration",
         ylabel=ylabel or f"{gate_name} (%)",
     )
 
@@ -340,6 +342,15 @@ def main(args):
     # Load data
     df = load_summary_data(experiment_dir)
 
+    # Filter out excluded treatments if specified
+    if args.exclude_treatments:
+        # Parse sample IDs to get treatment for filtering
+        treatments = df["sample_id"].apply(
+            lambda x: plot_utils.parse_sample_id(x)["treatment"]
+        )
+        df = df[~treatments.isin(args.exclude_treatments)]
+        logger.info(f"Excluded treatments: {args.exclude_treatments}")
+
     # Determine which gates to plot
     if args.gate_name:
         gate_names = [args.gate_name]
@@ -369,6 +380,7 @@ def main(args):
                 hue=args.hue,
                 x_scale=args.x_scale,
                 x_lim=args.x_lim,
+                xlabel=args.xlabel,
                 ylabel=args.ylabel,
                 output_name=args.output_name,
             )
@@ -470,6 +482,12 @@ Examples:
         help="Custom y-axis label (default: gate_name + %%)"
     )
     parser.add_argument(
+        "--xlabel",
+        type=str,
+        default=None,
+        help="Custom x-axis label (default: 'Concentration' for line plots)"
+    )
+    parser.add_argument(
         "--output_name",
         type=str,
         default=None,
@@ -479,6 +497,13 @@ Examples:
         "--generate_config",
         action="store_true",
         help="Generate a default plot_config.yaml in the experiment directory"
+    )
+    parser.add_argument(
+        "--exclude_treatments",
+        type=str,
+        nargs="+",
+        default=None,
+        help="Treatments to exclude from plot (e.g., --exclude_treatments Mock Control)"
     )
 
     args = parser.parse_args()

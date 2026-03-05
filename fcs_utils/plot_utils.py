@@ -54,11 +54,16 @@ def parse_sample_id(sample_id: str) -> dict:
         "conc_value": 0.0,
     }
 
-    # Extract numeric concentration value
+    # Extract numeric concentration value with unit conversion to nM
     if result["concentration"]:
-        match = re.search(r"(\d+\.?\d*)", result["concentration"])
+        match = re.search(r"(\d+\.?\d*)\s*(nM|uM|µM)?", result["concentration"], re.IGNORECASE)
         if match:
-            result["conc_value"] = float(match.group(1))
+            value = float(match.group(1))
+            unit = match.group(2)
+            # Convert uM/µM to nM
+            if unit and unit.lower() in ("um", "µm"):
+                value *= 1000
+            result["conc_value"] = value
 
     return result
 

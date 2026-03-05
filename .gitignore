@@ -8,3 +8,5 @@ logs/
 *.pyc
 notebooks/test.ipynb
 notebooks/test2.ipynb
+experiments/*
+run_experiment.sh
